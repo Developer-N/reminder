@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Reminder</string>
+    <string name="title_activity_remind">RemindActivity</string>
+    <string name="channel_description">Reminder channel</string>
+    <string name="channel_name">Reminder</string>
+    <string name="close">Close</string>
+</resources>
