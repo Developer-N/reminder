@@ -1,15 +1,22 @@
 # reminder
-Simple reminder for English  learning
+
+Simple reminder for English learning
 
 # App Info
+
 for each word remind
-1- one hour later
-2- one day later
-3- one week later
-4- one month later
-5- three month later
+<ol>
+<li> one hour later </li>
+<li> one day later </li>
+<li> one week later</li>
+<li> one month later</li>
+<li> three month later</li>
+</ol>
 
 # library used
-1- Jetpack Compose for UI
-2- Dagger Hilt for DI
-3- Room for Database
+
+<ol>
+<li> Jetpack Compose for UI </li>
+<li> Dagger Hilt for DI</li>
+<li> Room for Database</li>
+</ol>
