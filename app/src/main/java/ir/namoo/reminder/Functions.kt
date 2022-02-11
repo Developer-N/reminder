@@ -24,10 +24,9 @@ fun scheduleAll(context: Context) {
 fun scheduleAlarm(context: Context, word: String) {
     val db = WordDB.getInstance(context.applicationContext)
     runBlocking {
-        Log.e("NAMOO", "try to schedule for $word")
         val w = db.WordDao().getWordByWord(word)
-        w ?: return@runBlocking
-        scheduleAlarm(context, w)
+        if (w != null)
+            scheduleAlarm(context, w)
     }
 }
 
@@ -64,7 +63,6 @@ fun scheduleAlarm(context: Context, word: Word) {
 }
 
 private fun schedule(context: Context, date: Calendar, id: Int) {
-    Log.e("NAMOO", "scheduleAlarm: ${date.time}")
     val alarmManager = context.getSystemService<AlarmManager>()
     if (alarmManager != null && !date.before(Calendar.getInstance())) {
         val pendingIntent = PendingIntent.getBroadcast(

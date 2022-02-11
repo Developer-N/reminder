@@ -102,7 +102,8 @@ fun DeleteDialog(
             buttons = {
                 Row(horizontalArrangement = Arrangement.Center, modifier = Modifier.padding(5.dp)) {
                     TextButton(onClick = {
-                        cancelSchedule(context, word.id)
+                        for (i in 0..4)
+                            cancelSchedule(context, word.id * 5 + i)
                         vm.deleteWord(word)
                         channel.trySend("Delete success!")
                         onDismiss()
