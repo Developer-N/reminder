@@ -20,3 +20,7 @@ for each word remind
 <li> Dagger Hilt for DI</li>
 <li> Room for Database</li>
 </ol>
+
+# Architecture
+
+MVVM
