@@ -36,31 +36,31 @@ fun scheduleAlarm(context: Context, word: Word) {
     var date = Calendar.getInstance()
     date.timeInMillis = word.insertDate
     date.add(Calendar.HOUR_OF_DAY, 1)
-    schedule(context, date, word.id)
+    schedule(context, date, word.id * 5)
 
     //One Day
     date = Calendar.getInstance()
     date.timeInMillis = word.insertDate
     date.add(Calendar.DAY_OF_MONTH, 1)
-    schedule(context, date, word.id)
+    schedule(context, date, word.id * 5 + 1)
 
     //One week
     date = Calendar.getInstance()
     date.timeInMillis = word.insertDate
     date.add(Calendar.DAY_OF_MONTH, 7)
-    schedule(context, date, word.id)
+    schedule(context, date, word.id * 5 + 2)
 
     //One month
     date = Calendar.getInstance()
     date.timeInMillis = word.insertDate
     date.add(Calendar.MONTH, 1)
-    schedule(context, date, word.id)
+    schedule(context, date, word.id * 5 + 3)
 
     //three month
     date = Calendar.getInstance()
     date.timeInMillis = word.insertDate
     date.add(Calendar.MONTH, 3)
-    schedule(context, date, word.id)
+    schedule(context, date, word.id * 5 + 4)
 }
 
 private fun schedule(context: Context, date: Calendar, id: Int) {
@@ -86,7 +86,7 @@ private fun schedule(context: Context, date: Calendar, id: Int) {
 
 fun cancelSchedule(context: Context, id: Int) {
     val alarmManager = context.getSystemService<AlarmManager>()
-    if (alarmManager != null ) {
+    if (alarmManager != null) {
         val pendingIntent = PendingIntent.getBroadcast(
             context,
             id,
