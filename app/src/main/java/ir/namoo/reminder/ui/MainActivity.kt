@@ -15,7 +15,6 @@ import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
 import dagger.hilt.android.AndroidEntryPoint
 import ir.namoo.reminder.scheduleAll
@@ -61,6 +60,16 @@ fun MainScreen(vm: WordViewModel = viewModel()) {
         modifier = Modifier
             .fillMaxSize()
     ) {
+        //Test BroadCast
+//        val context = LocalContext.current
+//        Button(onClick = {
+//            context.sendBroadcast(Intent(context, RemindReceiver::class.java).apply {
+//                action = BROADCAST_REMIND
+//                putExtra(REMIND_ID,1)
+//            })
+//        }) {
+//            Text(text = "Send BroadCast!")
+//        }
         ReminderForm(channel)
         val words = vm.words.observeAsState(listOf()).value
 
@@ -72,13 +81,5 @@ fun MainScreen(vm: WordViewModel = viewModel()) {
     }
     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.BottomCenter) {
         SnackbarHost(hostState = snackbarHostState)
-    }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    ReminderTheme {
-        MainScreen()
     }
 }

@@ -14,8 +14,8 @@ android {
         applicationId = "ir.namoo.reminder"
         minSdk = 21
         targetSdk = 32
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 2
+        versionName = "1.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -48,6 +48,15 @@ android {
     }
     packagingOptions {
         resources.excludes += "/META-INF/{AL2.0,LGPL2.1}"
+    }
+    applicationVariants.all {
+        val variant = this
+        variant.outputs.map { it as com.android.build.gradle.internal.api.BaseVariantOutputImpl }
+            .forEach { output ->
+                val outputFileName = "Reminder-v${variant.versionName}.apk"
+                println("OutputFileName: $outputFileName")
+                output.outputFileName = outputFileName
+            }
     }
 }
 

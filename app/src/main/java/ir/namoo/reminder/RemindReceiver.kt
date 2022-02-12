@@ -26,6 +26,7 @@ class RemindReceiver : BroadcastReceiver() {
                 if (id == -1) return
                 context.startActivity(Intent(context, RemindActivity::class.java).apply {
                     putExtra(REMIND_ID, id)
+                    flags = Intent.FLAG_ACTIVITY_NEW_TASK
                 })
             }
         }
