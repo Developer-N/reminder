@@ -48,7 +48,7 @@ fun WordItem(index: Int, word: Word, channel: Channel<String>) {
             verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier.padding(10.dp, 5.dp)
         ) {
-            Text(text = index.toString(), Modifier.width(20.dp), fontWeight = FontWeight.Bold)
+            Text(text = (index + 1).toString(), Modifier.width(20.dp), fontWeight = FontWeight.Bold)
             Spacer(modifier = Modifier.size(10.dp))
             Text(text = word.word, Modifier.width(150.dp))
             Spacer(modifier = Modifier.size(10.dp))
